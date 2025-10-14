@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>What is a project</title>
+    <link rel="icon" type="image/x-icon" href="/Assets/comments.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <style>
+:root {
+        --AIMblue: #4353A3;
+        --darkBlue: #38416D;
+        --teal: #5DC8B9;
+        --cream: #F1EEDE;
+        --grey: #e7e9ec;
+        --rust: #AF4510;
+        --navy: #12195C;
+        --white: #ffffff;
+        --lightBlue: #AEBAE4;
+      }
+
+      body {
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+
+      table {
+        width: 100%;
+        margin:0;
+        padding:0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        text-align: left;
+      }
+
+      table tr {
+        border: 1px solid var(--AIMblue);
+        padding: 5px;
+      }
+
+      table th, table td {
+        border: 1px solid var(--AIMblue);
+        padding: 10px;
+      }
+
+      table th {
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        background-color: var(--darkBlue);
+        color: var(--white)
+      }
+      tr:nth-child(even) {
+  background-color: var(--grey); /*Grey of torment!*/
+} 
+
+      tr:nth-child(odd) {
+  background-color: white; 
+} 
+
+      @media screen and (max-width: 600px) {
+
+        table {
+          border: 0;
+          border: none;
+        }
+
+        table thead {
+          display: none;
+        }
+
+        table tr {
+          margin-bottom: 10px;
+          display: block;
+          border-bottom: 2px solid var(--AIMblue);
+          border-left: 1px solid var(--lightBlue);
+          border-right: 1px solid var(--lightBlue);
+          border-top: 1px solid var(--lightBlue);
+        }
+
+        table td {
+          display: block;
+          text-align: right;
+          font-size: 13px;
+          border-bottom: 1px dotted var(--rust);
+          border-left: 0px dotted #ccc;
+          border-right: 0px dotted #ccc;
+          border-top: 0px dotted #ccc;
+        }
+
+        table td:last-child {
+          border-bottom: 0;
+        }
+
+        table td:before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+        }
+      }
+
+  </style>
+  
+  </head>
+  <body>
+    <h2>Understanding common colour associations</h2>
+    <p>Here’s how some commonly used colours can influence perception:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Colour</th>
+          <th>Psychological Effect</th>
+          <th>Best Used For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Colour">Blue</td>
+          <td data-label="Psychological Effect">Promotes trust, calm and confidence. Often associated with reliability and intelligence.</td>
+          <td data-label="Best Used For">Corporate or formal presentations, topics involving data, strategy or leadership.</td>
+        </tr>
+        <tr>
+          <td data-label="Colour">Green</td>
+          <td data-label="Psychological Effect">Symbolises growth, balance and renewal. Has a calming and reassuring effect.</td>
+          <td data-label="Best Used For">Environmental themes, health and wellbeing, change management or personal development topics.</td>
+        </tr>
+        <tr>
+          <td data-label="Colour">Red</td>
+          <td data-label="Psychological Effect">Represents passion, energy and urgency. Grabs attention quickly but can be overpowering if overused.</td>
+          <td data-label="Best Used For">Key points, calls to action or moments that require emotional emphasis.</td>
+        </tr>
+        <tr>
+          <td data-label="Colour">Yellow</td>
+          <td data-label="Psychological Effect">Reflects optimism, warmth and creativity. Too much can cause visual fatigue.</td>
+          <td data-label="Best Used For">Highlighting key ideas, creative sessions or motivational presentations.</td>
+        </tr>
+        <tr>
+          <td data-label="Colour">Orange</td>
+          <td data-label="Psychological Effect">Combines energy and friendliness. Invokes enthusiasm and approachability.</td>
+          <td data-label="Best Used For">Informal team updates, product launches or engaging storytelling.</td>
+        </tr>
+        <tr>
+          <td data-label="Colour">Purple</td>
+          <td data-label="Psychological Effect">Suggests creativity, wisdom and luxury. Creates a sense of sophistication.</td>
+          <td data-label="Best Used For">Inspirational or visionary presentations.</td>
+        </tr>
+        <tr>
+          <td data-label="Colour">Black/Grey</td>
+          <td data-label="Psychological Effect">Conveys authority, formality and professionalism. Too much can seem heavy or distant.</td>
+          <td data-label="Best Used For">Formal topics, contrast backgrounds or minimalistic design themes.</td>
+        </tr>
+        <tr>
+          <td data-label="Colour">White</td>
+          <td data-label="Psychological Effect">Represents clarity, simplicity and space. Helps balance other strong colours.</td>
+          <td data-label="Best Used For">Backgrounds or minimalist layouts where focus should be on content.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+</html>
