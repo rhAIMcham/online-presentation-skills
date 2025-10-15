@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>What is a project</title>
+    <link rel="icon" type="image/x-icon" href="/Assets/comments.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <style>
+:root {
+        --AIMblue: #4353A3;
+        --darkBlue: #38416D;
+        --teal: #5DC8B9;
+        --cream: #F1EEDE;
+        --grey: #e7e9ec;
+        --rust: #AF4510;
+        --navy: #12195C;
+        --white: #ffffff;
+        --lightBlue: #AEBAE4;
+      }
+
+      body {
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+
+      table {
+        width: 100%;
+        margin:0;
+        padding:0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        text-align: left;
+      }
+
+      table tr {
+        border: 1px solid var(--AIMblue);
+        padding: 5px;
+      }
+
+      table th, table td {
+        border: 1px solid var(--AIMblue);
+        padding: 10px;
+      }
+
+      table th {
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        background-color: var(--darkBlue);
+        color: var(--white)
+      }
+      tr:nth-child(even) {
+  background-color: var(--grey); /*Grey of torment!*/
+} 
+
+      tr:nth-child(odd) {
+  background-color: white; 
+} 
+
+      @media screen and (max-width: 600px) {
+
+        table {
+          border: 0;
+          border: none;
+        }
+
+        table thead {
+          display: none;
+        }
+
+        table tr {
+          margin-bottom: 10px;
+          display: block;
+          border-bottom: 2px solid var(--AIMblue);
+          border-left: 1px solid var(--lightBlue);
+          border-right: 1px solid var(--lightBlue);
+          border-top: 1px solid var(--lightBlue);
+        }
+
+        table td {
+          display: block;
+          text-align: right;
+          font-size: 13px;
+          border-bottom: 1px dotted var(--rust);
+          border-left: 0px dotted #ccc;
+          border-right: 0px dotted #ccc;
+          border-top: 0px dotted #ccc;
+        }
+
+        table td:last-child {
+          border-bottom: 0;
+        }
+
+        table td:before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+        }
+      }
+
+  </style>
+  
+  </head>
+  <body>
+ <table>
+      <thead>
+        <tr>
+          <th>Consideration</th>
+          <th>What to look for</th>
+          <th>Why it matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Consideration">Audience familiarity</td>
+          <td data-label="What to look for">Choose a platform your participants already know.</td>
+          <td data-label="Why it matters">Reduces confusion and technical delays during setup.</td>
+        </tr>
+        <tr>
+          <td data-label="Consideration">Interactivity needs</td>
+          <td data-label="What to look for">Look for features like polls, breakout rooms and reactions.</td>
+          <td data-label="Why it matters">Keeps participants engaged and encourages collaboration.</td>
+        </tr>
+        <tr>
+          <td data-label="Consideration">Security and access</td>
+          <td data-label="What to look for">Check if login is required and if waiting rooms or passcodes are available.</td>
+          <td data-label="Why it matters">Ensures data safety and a professional environment.</td>
+        </tr>
+        <tr>
+          <td data-label="Consideration">Ease of use</td>
+          <td data-label="What to look for">Preference platforms with intuitive interfaces and minimal setup steps.</td>
+          <td data-label="Why it matters">Allows you to focus on content, not troubleshooting.</td>
+        </tr>
+        <tr>
+          <td data-label="Consideration">Technical requirements</td>
+          <td data-label="What to look for">Confirm compatibility with devices, bandwidth and recording options.</td>
+          <td data-label="Why it matters">Prevents lags, poor video/audio quality or feature glitches.</td>
+        </tr>
+        <tr>
+          <td data-label="Consideration">Integration with other tools</td>
+          <td data-label="What to look for">Check if the platform connects with your calendar, email or file-sharing tools.</td>
+          <td data-label="Why it matters">Simplifies scheduling and content sharing.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+</html>
