@@ -121,7 +121,11 @@ table td:before {
 </style>
   </head>
 <body>
-<table>
+<div style="margin:12px 0; display:flex; gap:8px;">
+  <button id="export-png" type="button">Export PNG</button>
+  <button id="export-pdf" type="button">Export PDF</button>
+</div>
+  <table>
    <colgroup>
         <col style="width: 10%;">
         <col style="width: 30%;">
@@ -241,4 +245,70 @@ for(let i of textareas) {
   })(i);
 }
 </script>
+
+<!-- Add html2canvas and jsPDF (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+// Export table to PNG
+document.getElementById('export-png').addEventListener('click', async () => {
+  const table = document.querySelector('table');
+  // ensure hiddenDiv doesn't affect capture
+  const canvas = await html2canvas(table, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+  const dataUrl = canvas.toDataURL('image/png');
+  const link = document.createElement('a');
+  link.href = dataUrl;
+  link.download = 'platforms.png';
+  link.click();
+});
+
+// Export table to PDF (A4 portrait)
+document.getElementById('export-pdf').addEventListener('click', async () => {
+  const { jsPDF } = window.jspdf;
+  const table = document.querySelector('table');
+  // capture as image
+  const canvas = await html2canvas(table, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+  const imgData = canvas.toDataURL('image/png');
+
+  const pdf = new jsPDF('p', 'mm', 'a4');
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = pdf.internal.pageSize.getHeight();
+
+  // compute image dims to keep aspect ratio
+  const imgProps = pdf.getImageProperties(imgData);
+  const imgWidthMm = pdfWidth;
+  const imgHeightMm = (imgProps.height * imgWidthMm) / imgProps.width;
+
+  if (imgHeightMm <= pdfHeight) {
+    pdf.addImage(imgData, 'PNG', 0, 0, imgWidthMm, imgHeightMm);
+  } else {
+    // If long, tile image across pages
+    let position = 0;
+    let remainingHeight = imgHeightMm;
+    // draw first page
+    pdf.addImage(imgData, 'PNG', 0, position, imgWidthMm, imgHeightMm);
+    remainingHeight -= pdfHeight;
+    while (remainingHeight > 0) {
+      position -= pdfHeight;
+      pdf.addPage();
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidthMm, imgHeightMm);
+      remainingHeight -= pdfHeight;
+    }
+  }
+
+  pdf.save('platforms.pdf');
+});
+</script>
+<style>
+  /* small styles for the export buttons */
+  #export-png, #export-pdf {
+    background: var(--AIMblue);
+    color: var(--white);
+    border: none;
+    padding: 8px 12px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+</style>
 </html>
